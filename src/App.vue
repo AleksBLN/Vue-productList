@@ -1,18 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container-fluid">
+      <h1>Список товаров</h1>
+
+      <FilterForm />
+
+      <ProductList />
+      
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import FilterForm from '@/components/FilterForm'
+import ProductList from '@/components/ProductList'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    FilterForm,
+    ProductList,
+  },
 }
 </script>
 
