@@ -2,20 +2,17 @@
   <div id="app">
     <div class="container-fluid">
       <h1>Список товаров</h1>
-
       <FilterForm />
-
       <ProductList />
-      
     </div>
   </div>
 </template>
 
 <script>
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-import FilterForm from '@/components/FilterForm'
-import ProductList from '@/components/ProductList'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+import FilterForm from '@/components/FilterForm';
+import ProductList from '@/components/ProductList';
 
 export default {
   name: 'App',
@@ -23,7 +20,7 @@ export default {
     FilterForm,
     ProductList,
   },
-}
+};
 </script>
 
 <style>
