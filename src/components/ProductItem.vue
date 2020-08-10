@@ -40,18 +40,16 @@
                         </div>
                     </div>
                 </div>
-                <Popup
-                    @togglePopup="togglePopup"
-                    v-if="showPopup"
-                >
-                    Куплен товар '{{product.name}}'
-                </Popup>
-                <a
-                    @click.stop.prevent="togglePopup"
-                    class="btn btn-primary m-1"
-                >  
-                    Купить
-                </a>
+
+                <b-button id="show-btn" variant="primary" @click.stop="$bvModal.show(product.id)">Купить</b-button>
+
+                <b-modal :id="product.id" hide-footer>
+                    <div class="d-block text-center">
+                    <h3>Куплен товар '{{product.name}}'</h3>
+                    </div>
+                    <b-button class="mt-3" variant="primary" block @click="$bvModal.hide(product.id)">ОК</b-button>
+                </b-modal>
+
             </div>
         </div>
     </div>
@@ -59,17 +57,13 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import Popup from '@/components/Popup'
 
 export default {
     name: 'productItem',
-    components: {
-        Popup
-    },
+
     data() {
         return {
             isExpandedInfo: false,
-            showPopup: false
         }
     },
     props: {
@@ -81,9 +75,6 @@ export default {
         toggleExpandedInfo() {
             this.isExpandedInfo = !this.isExpandedInfo
         },
-        togglePopup() {
-            this.showPopup = !this.showPopup
-        }
     }
 }
 </script>
